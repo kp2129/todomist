@@ -30,12 +30,30 @@ Follow these steps to set up a Laravel project:
    php artisan key:generate
    ```
    
-5. Run the database migrations to create the necessary database tables:
+5. You may install Laravel Sanctum via the Composer package manager:
+
+   ```sh
+   composer require laravel/sanctum
+   ```
+6. Next, you should publish the Sanctum configuration and migration files using the vendor:publish Artisan command. The sanctum configuration file will be placed in your application's config directory:
+
+   ```sh
+   php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+   ```
+   
+7. Run the database migrations to create the necessary database tables:
 
    ```sh
    php artisan migrate
    ```
-
+8. Next, if you plan to utilize Sanctum to authenticate a SPA, you should add Sanctum's middleware to your api middleware group within your application's app/Http/Kernel.php file:
+   ```sh
+   'api' => [
+    \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+    \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+    \Illuminate\Routing\Middleware\SubstituteBindings::class,
+   ],
+   ```
 ## Setting Up a React Project
 
 To set up a React project, follow these steps:
