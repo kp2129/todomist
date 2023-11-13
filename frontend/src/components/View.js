@@ -18,12 +18,16 @@ export default function View() {
   return (
     <>
         <div className='mainContainer'>
-            <p className='text-white'>{x.taskName} 
-            <span className='text-secondary'>({x.taskDescription})</span> 
-            <span className='text-secondary'>({x.dueDate})</span>
-            <span className='text-secondary'>({x.created_at})</span>
-            <span className='text-secondary'>({x.updated_at})</span>
-            </p>
+            <div className='taskContainer'>
+                <p className='text-white'>{x.taskName} 
+                <div className='aboutContainer'>
+                    <span className='text-secondary'>({x.taskDescription})</span> 
+                    <span className='text-secondary'>({x.dueDate})</span>
+                    <span className='text-secondary'>({x.created_at})</span>
+                    <span className='text-secondary'>({x.updated_at})</span>
+                </div>
+                </p>
+            </div>
         </div>
     </>
   )
