@@ -16,11 +16,15 @@ use App\Http\Controllers\TodoController;
 */
 
 Route::group(['prefix' => 'auth'], function () {
-    Route::post('login', [AuthController::class, 'login']);
-    Route::post('register', [AuthController::class, 'register']);
+  Route::post('login', [AuthController::class, 'login']);
+  Route::post('register', [AuthController::class, 'register']);
+  Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::get('logout', [AuthController::class, 'logout']);
+  });
 
     Route::group(['middleware' => 'auth:sanctum'], function() {
       Route::get('logout', [AuthController::class, 'logout']);
+      Route::get('user', [AuthController::class, 'user']);
     });
 });
 
