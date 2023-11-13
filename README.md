@@ -5,4 +5,22 @@ TodoMist was created so you can professionally miss all you todo's 😂
 # ![laravel-icon-497x512-uwybstke](https://github.com/kp2129/todomist/assets/58330666/019e77e8-1866-4ca8-a151-d0541275b32a) Backend created using Laravel 😎
 # ![react-icon-256x228-97ltgbl1](https://github.com/kp2129/todomist/assets/58330666/0c052c75-d638-4f66-bcdd-af8633302d61) Frontend created using React.js 👀
 
+```sh
+ cd backend
+```
 
+```sh
+ composer require laravel/sanctum
+```
+
+```sh
+ cp .env.example .env
+```
+
+```sh
+ php artisan key:generate
+```
+
+```sh
+ php artisan migrate
+```
