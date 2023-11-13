@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TodoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,6 +21,12 @@ Route::group(['prefix' => 'auth'], function () {
 
     Route::group(['middleware' => 'auth:sanctum'], function() {
       Route::get('logout', [AuthController::class, 'logout']);
-      Route::get('user', [AuthController::class, 'user']);
     });
+});
+
+Route::group(['middleware' => 'auth:sanctum'], function() {
+  Route::get('user', [AuthController::class, 'user']);
+  Route::get('/', [TodoController::class, 'show']);
+  Route::post('/ceateTask', [TodoController::class, 'store']);
+  Route::delete('/{id}', [TodoController::class, 'destroy']);
 });
