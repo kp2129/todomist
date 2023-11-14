@@ -18,20 +18,16 @@ use App\Http\Controllers\TodoController;
 Route::group(['prefix' => 'auth'], function () {
   Route::post('login', [AuthController::class, 'login']);
   Route::post('register', [AuthController::class, 'register']);
-  Route::group(['middleware' => 'auth:sanctum'], function () {
-    Route::get('logout', [AuthController::class, 'logout']);
-  });
-
     Route::group(['middleware' => 'auth:sanctum'], function() {
       Route::get('logout', [AuthController::class, 'logout']);
-      Route::get('user', [AuthController::class, 'user']);
     });
 });
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
-  Route::get('user', [AuthController::class, 'user']);
+  Route::get('/user', [AuthController::class, 'user']);
   Route::get('/', [TodoController::class, 'show']);
   Route::post('/ceateTask', [TodoController::class, 'store']);
   Route::post('/updateTask/{id}', [TodoController::class, 'update']);
   Route::delete('/{id}', [TodoController::class, 'destroy']);
+  
 });
