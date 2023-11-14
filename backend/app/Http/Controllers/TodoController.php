@@ -49,30 +49,23 @@ class TodoController extends Controller
                 if($request->taskName != null){
                     $sql['taskName'] = $request->taskName; 
                 }
-                // Todo::where('id', $id)->update(['taskName' => $request->taskName]);
-                // break;
             case $request->taskDescription != null:
                 if($request->taskDescription != null){
                     $sql['taskDescription'] = $request->taskDescription;
                 }
-                // Todo::where('id', $id)->update(['taskDescription' => $request->taskDescription]);
-                // break;
             case $request->status != null:
                 if($request->status != null){
                     $sql['status'] = $request->status;
                 }
-                // Todo::where('id', $id)->update(['status' => $request->status]);
-                // break;
             case $request->dueDate != 0:
                 if($request->dueDate != null){
                     $sql['dueDate'] = $request->dueDate;
                 }
-                // Todo::where('id', $id)->update(['dueDate' => $request->dueDate]);
                 break;
             default:
                 return response()->json(['error' => 'Fill all parameters.']);
         }
-        // return response()->json($sql);
+
         if(Todo::where('id', $id)->update($sql)){
             return response()->json([
                 'message' => 'Task Id:'.$id.' updated sucessfuly'
