@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding: 1rem;
+    background-color: #EDF2F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-icon{
+    width: 24px;
+    height: 24px;
+}
+
+.profile-icon > img{
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.header-right-side{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-right-side > svg{
+    width: 24px;
+    height: 24px;
+}
+
+.header-left-side > svg{
+    height: 30px;
+}
