@@ -32,5 +32,6 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
   Route::get('user', [AuthController::class, 'user']);
   Route::get('/', [TodoController::class, 'show']);
   Route::post('/ceateTask', [TodoController::class, 'store']);
+  Route::post('/updateTask/{id}', [TodoController::class, 'update']);
   Route::delete('/{id}', [TodoController::class, 'destroy']);
 });
