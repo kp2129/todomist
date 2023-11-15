@@ -1,7 +1,9 @@
 import React from 'react';
 import './style/index.css';
-import Sidebar from './components/sidebar';
+import Aside from './components/aside';
 import Navbar from './components/navbar';
+
+
 
 export default function App() {
   return (
@@ -9,7 +11,7 @@ export default function App() {
       <Navbar />
 
       <main>
-        <Sidebar />
+        <Aside />
       </main>
     </>
   );
