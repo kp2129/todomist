@@ -27,9 +27,9 @@ TodoMist was created so you can professionally miss all your todo's 😂
 
 ### AIO Commands
 ```sh
-cd backend &&
-composer require laravel/sanctum &&
-cp .env.example .env &&
-php artisan key:generate &&
+cd backend
+composer require laravel/sanctum 
+cp .env.example .env 
+php artisan key:generate 
 php artisan migrate
 ```
