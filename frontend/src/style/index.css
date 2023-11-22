@@ -1,10 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
-    font-family: Inter;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
 }
 
 #root {
@@ -55,9 +63,15 @@ main {
 }
 
 aside {
-    flex: 0.2;
+    width: 400px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
     height: 100%;
+
+    font-size: 20px;
+    
+    & * {
+        transition: 500ms;
+    }
 }
 
 .side-bar-buttons-top>button>svg {
@@ -75,6 +89,7 @@ aside {
 
 .side-bar-top.active,
 .side-bar-bottom.active {
+    
     background-color: rgba(102, 167, 193, 0.2);
 }
 
@@ -94,8 +109,31 @@ aside {
     background: none;
 }
 
+@keyframes appearAnim {
+    0%{
+        opacity: 0;
+        
+    }
+    100%{
+        opacity: 1;
+        
+    }
+}
 
-.inner-data>p {
+.inner-data{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    animation: appearAnim 1s forwards;
+    
+    
+}
+
+
+.inner-data > p {
+    user-select: none;
+    cursor: pointer;
     color: #1A6280;
     display: flex;
     align-items: center;
