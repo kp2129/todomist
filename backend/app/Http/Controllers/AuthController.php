@@ -40,6 +40,14 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        if(!$request->email){
+            return response()->json(['message' => 'Please fill email.']);
+        }else if(!$request->password){
+            return response()->json(['message' => 'Please fill password.']);
+        }elseif(!$request->password && !$request->email){
+            return response()->json(['message' => 'Please fill email and password.']);
+        }
+        
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
@@ -47,6 +55,7 @@ class AuthController extends Controller
         ]);
 
         $credentials = request(['email', 'password']);
+
         if (!Auth::attempt($credentials)) {
             return response()->json([
                 'message' => 'Unauthorized'
