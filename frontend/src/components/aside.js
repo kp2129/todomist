@@ -24,13 +24,13 @@ function Aside() {
           </div>
           <div className={`planning-section ${sections.timeline ? 'active' : ''}`}>
             <p>PLANNING</p>
-            {sections.timeline && (
-               <div className='inner-data'>
+            
+              <div className={(sections.timeline) ? 'inner-data' : 'hidden'}>
                 <p><IconTimeline /> Timeline</p>
                 <p><IconStack3 /> Backlog</p>
                 <p><IconColumns3 /> Board</p>
               </div>
-            )}
+            
           </div>
         </div>
       </div>

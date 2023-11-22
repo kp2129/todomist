@@ -94,6 +94,21 @@ aside {
     background: none;
 }
 
+@keyframes appearAnim {
+    0%{
+        opacity: 0;
+        
+    }
+    100%{
+        opacity: 1;
+        
+    }
+}
+
+.inner-data{
+    
+    animation: appearAnim 1s forwards;
+}
 
 .inner-data > p {
     color: #1A6280;
