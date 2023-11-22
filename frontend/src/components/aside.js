@@ -22,7 +22,7 @@ function Aside() {
               {getButtonIcon(sections.timeline)}
             </button>
           </div>
-          <div className={`planning-section ${sections.timeline ? 'active' : ''}`}>
+          <div className={`planning-section ${sections.timeline ? 'active' : 'bg-white'}`}>
             <p>PLANNING</p>
             
               <div className={(sections.timeline) ? 'inner-data' : 'hidden'}>
