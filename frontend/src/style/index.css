@@ -128,3 +128,43 @@ aside {
     justify-content: center;
     gap: 0.5rem;
 }
+
+
+
+.backlog{
+    width: -webkit-fill-available;
+    flex: 1;
+}
+
+.sprints{
+    display: flex;
+    align-items: center;
+    background-color: rgb(102, 167 , 193 , 0.2);
+    border-radius: 10px;
+    margin: 2em;
+    padding: 0.2rem;
+    justify-content: space-between;
+}
+
+.right-side-sprint{
+    display: flex;
+    gap: 1rem;
+}
+
+.left-side-sprint{
+    display: flex;
+    align-items: center;
+}
+
+.right-side-sprint > button{
+    /* text-decoration: none; */
+    border-style: none;
+    background-color: #1A6280;
+    color: white;
+    padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+

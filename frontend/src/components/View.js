@@ -1,4 +1,6 @@
 import React from 'react'
+import {useState, useEffect, useNavigate} from 'react'
+import axios from 'axios'
 
 export default function View() {
     const [todoData, setTodoData] = useState([]);
@@ -10,7 +12,7 @@ export default function View() {
                 alert("Error: "+ res.data.reason);
             }else{
                 console.log(res.data.reason);
-                setMovieData(res.data.reason);
+                setTodoData(res.data.reason);
             }
             
         });
