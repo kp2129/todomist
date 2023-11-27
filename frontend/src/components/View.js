@@ -1,10 +1,10 @@
-import React from 'react'
-import {useState, useEffect, useNavigate} from 'react'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function View() {
     const [todoData, setTodoData] = useState([]);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     useEffect(() => {
         axios.get('api.php').then((res) => {
             
@@ -17,20 +17,11 @@ export default function View() {
             
         });
     }, []);
-  return (
-    <>
-        <div className='mainContainer'>
-            <div className='taskContainer'>
-                <p className='text-white'>{res.taskName} 
-                <div className='aboutContainer'>
-                    <span className='text-secondary'>({res.taskDescription})</span> 
-                    <span className='text-secondary'>({res.dueDate})</span>
-                    <span className='text-secondary'>({res.created_at})</span>
-                    <span className='text-secondary'>({res.updated_at})</span>
-                </div>
-                </p>
+    return (
+        <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+
             </div>
-        </div>
-    </>
-  )
+        </>
+    )
 }
