@@ -7,7 +7,6 @@ export default function View() {
     // const navigate = useNavigate();
     useEffect(() => {
         axios.get('api.php').then((res) => {
-            
             if(res.data.code === 0){
                 alert("Error: "+ res.data.reason);
             }else{
