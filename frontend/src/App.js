@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import Backlog from './components/pages/backlog';
 import Calendar from './components/pages/Calendar';
 import NotFound from './components/pages/NotFound';
+import View from './components/View';
 
 export default function App() {
   const [selectedPage, setSelectedPage] = useState('backlog');
