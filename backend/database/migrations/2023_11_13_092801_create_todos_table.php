@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('taskDescription');
             $table->boolean('status');
             $table->integer('category');
+            $table->date('dueDate');
             $table->timestamps();
             
         });
