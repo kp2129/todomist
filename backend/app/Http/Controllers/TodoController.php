@@ -75,4 +75,21 @@ class TodoController extends Controller
         }
 
     }
+
+    // Leons taisija, pat nedoma aizstikt (KRISTAP)
+    public function search($query){
+        
+        if(empty($query)){
+           return response()->json([]); 
+        }
+
+        // Perform the search using Eloquent
+        $tasks = Todo::where('taskDescription', 'LIKE', "%$query%")->get();
+        if($tasks){
+            // Return the search results as JSON
+            return response()->json($tasks);
+        }else{
+            return response()->json(['error' => 'Not Found'], 404);
+        }
+    }
 }
