@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 export default function View() {
 
 
+
     const [todoData, setTodoData] = useState([]);
     // const navigate = useNavigate();
     useEffect(() => {
@@ -16,6 +17,7 @@ export default function View() {
                 console.log(res.data);
                 setTodoData(res.data);
             }
+
 
 
             
