@@ -4,9 +4,7 @@ import { IconPlus, IconChevronDown, IconChevronRight, IconDots, IconPencil } fro
 
 function Sprint({ name, startDate, endDate, issues, issueName }) {
     const [showIssues, setShowIssues] = useState(false);
-function Hide({}){
-    
-}
+
     return (
         <>
             <div className='sprints'>
@@ -35,8 +33,7 @@ function Hide({}){
                             </div>
                         ))}
                         <div className='issue-div'>
-                            <IconPlus /> <p className="hideMe" onClick={Hide}>Create Issue</p>
-
+                            <IconPlus /> <p>Create issue</p>
                         </div>
                     </div>
                 )}
