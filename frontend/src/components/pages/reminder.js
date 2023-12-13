@@ -33,10 +33,15 @@ const Reminder = () => {
             }
         });
     }, []);
+
+    function hide(id){
+        document.getElementById(id.index).classList.add("hidden");
+        // element;
+    }
   return (
     <>
-        {reminders.map((sprint) => (
-            <h3 className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded font-bold text-xl'>{sprint.name} is due on {sprint.endDate} in {sprint.days} days.</h3>
+        {reminders.map((sprint, index) => (
+            <h3 className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded font-bold text-xl flex flex-row' id={index} >{sprint.name} is due on {sprint.endDate} in {sprint.days} days. <button className='ml-auto' onClick={() => hide({index})} >x</button></h3>
             // <p>is due on</p> 
         ))}
     </>
