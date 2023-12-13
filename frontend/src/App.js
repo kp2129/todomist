@@ -10,6 +10,7 @@ import Calendar from './components/pages/Calendar';
 import NotFound from './components/pages/NotFound';
 import View from './components/View';
 import { useNavigate } from 'react-router-dom';
+import Reminder from './components/pages/reminder';
 
 
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
       <View />
       <Navbar switchPage={switchPage} />
       <Create />
+      <Reminder/>
       <main className={selectedPage === 'login' ? 'Flex-center' : ''}>
         {selectedPage !== 'login' && <Aside switchPage={switchPage} />}
         {selectedPage in pages ? (

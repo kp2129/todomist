@@ -113,7 +113,7 @@ function Backlog() {
     // });
 
 
-    console.log(sprintsData);
+
 
     return (
         <>
