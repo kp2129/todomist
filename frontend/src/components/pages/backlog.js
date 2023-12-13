@@ -112,7 +112,7 @@ function Backlog() {
 
 
 
-    console.log(sprintsData);
+    // console.log(sprintsData);
 
     return (
         <>

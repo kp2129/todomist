@@ -1,14 +1,12 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
 
 // import React from 'react'
 
 const Reminder = () => {
 
     const [reminders, setReminders] = useState([]);
-
-    // let sprintsData = [0, 1];
-    // let sprintsData = [];
 
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/get').then((res) => {
@@ -36,12 +34,28 @@ const Reminder = () => {
 
     function hide(id){
         document.getElementById(id.index).classList.add("hidden");
+        Cookies.set(`msg-${id.index}`, 'hidden', { sameSite: 'strict', expires: 1 });
+        console.log(`HIDE msg-${id.index}`);
         // element;
     }
+
+    useEffect(() => {
+        for(let i = 0; i < reminders.length; i++){
+            // Cookies.remove(`msg-${i}`);
+            if(Cookies.get(`msg-${i}`) == 'hidden'){
+                document.getElementById(i).classList.add('hidden');
+            }
+        }
+    });
+
   return (
     <>
         {reminders.map((sprint, index) => (
-            <h3 className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded font-bold text-xl flex flex-row' id={index} >{sprint.name} is due on {sprint.endDate} in {sprint.days} days. <button className='ml-auto' onClick={() => hide({index})} >x</button></h3>
+            <h3 className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded font-bold text-xl flex flex-row' 
+            id={index}>
+                {sprint.name} is due on {sprint.endDate} in {sprint.days} days. 
+                <button className='ml-auto' onClick={() => hide({index})}>x</button>
+            </h3>
             // <p>is due on</p> 
         ))}
     </>
