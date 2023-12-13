@@ -26,7 +26,7 @@ const reminder = () => {
                     let end_month = new Date(test[i][1]["dueDate"]).getMonth()+1;
                     let end_date = new Date(test[i][1]["dueDate"]).getDate();
                     // console.log(start_date);
-                    tempData.push({ name: `${test[i][1]["taskName"]}`, startDate: `${start_date}/${start_month}/${start_year}`, endDate: `${end_date}/${end_month}/${end_year}`, issueName: `TMST-${test[i][1]['id']}`, issues: [`${test[i][1]["taskDescription"]}`] });
+                    tempData.push({ name: `${test[i][1]["taskName"]}`, endDate: `${end_date}/${end_month}/${end_year}`});
                 } 
                 setReminders(tempData);
             }
