@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../style/index.css';
-import { IconChevronDown, IconChevronRight, IconTimeline, IconColumns3, IconStack3 } from '@tabler/icons-react';
+import { IconChevronDown, IconChevronRight, IconTimeline, IconColumns3, IconStack3, IconCalendar } from '@tabler/icons-react';
 
-function Aside() {
+function Aside(props) {
   const [sections, setSections] = useState({ timeline: false, example: false });
 
   const handleToggleSection = (section) => {
@@ -26,9 +26,10 @@ function Aside() {
             <p>PLANNING</p>
             
               <div className={(sections.timeline) ? 'inner-data' : 'hidden'}>
-                <p><IconTimeline /> Timeline</p>
-                <p><IconStack3 /> Backlog</p>
-                <p><IconColumns3 /> Board</p>
+                <p onClick={() => props.switchPage('timeline')}><IconTimeline /> Timeline</p>
+                <p onClick={() => props.switchPage('backlog')}><IconStack3/> Backlog</p>
+                <p onClick={() => props.switchPage('board')}><IconColumns3 /> Board</p>
+                <p onClick={() => props.switchPage('calendar')}><IconCalendar /> Calendar</p>
               </div>
             
           </div>

@@ -64,6 +64,10 @@ main {
     height: 100%;
 }
 
+.Flex-center{
+    justify-content: center;
+}
+
 aside {
     width: 400px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -133,20 +137,26 @@ aside {
 }
 
 .inner-data > p {
+    &:hover{
+        color: #62a9c7;
+    }
+
     user-select: none;
     cursor: pointer;
     color: #1A6280;
     display: flex;
-    align-items: center; 
+    align-items: center;
     gap: 0.5rem;
+
+    transition: 0ms;
 }
 
 
-.planning-section >p  {
+.planning-section>p {
     color: #66A7C1;
 }
 
-.planning-section{
+.planning-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,32 +165,101 @@ aside {
 
 
 
-.backlog{
+.backlog {
     width: -webkit-fill-available;
     flex: 1;
 }
 
-.sprints{
+.top-sprint {
     display: flex;
     align-items: center;
-    background-color: rgb(102, 167 , 193 , 0.2);
-    border-radius: 10px;
-    margin: 2em;
-    padding: 0.2rem;
     justify-content: space-between;
+    padding: 0.5rem;
 }
 
-.right-side-sprint{
+.sprints {
+    background-color: rgb(102, 167, 193, 0.2);
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.sprint-task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: whitesmoke;
+}
+
+.sprint-task-right{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.sprint-task-left{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sprint-task-left > svg{
+    height: 20px;
+    width: 20px;
+}
+
+.sprint-task-right > svg,
+.sprint-task-left > svg {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sprint-task:hover .sprint-task-right > svg,
+.sprint-task:hover .sprint-task-left > svg {
+    opacity: 1;
+}
+
+.issue-div{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.backlog-card{
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.issue-div:hover{
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.backlog-cards{
+    border-style: dotted;
+    border-color: lightgray;
+    border-width: 2px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: gray;
+    font-size: x-small;
+}
+
+.right-side-sprint {
     display: flex;
     gap: 1rem;
 }
 
-.left-side-sprint{
+.left-side-sprint {
     display: flex;
     align-items: center;
 }
 
-.right-side-sprint > button{
+.right-side-sprint>button {
     /* text-decoration: none; */
     border-style: none;
     background-color: #1A6280;
