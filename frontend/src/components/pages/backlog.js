@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import '../../style/index.css';
+import View from '../View.js';
 import { IconPlus, IconChevronDown, IconChevronRight, IconDots, IconPencil } from '@tabler/icons-react';
 import axios from 'axios';
 
 function Sprint({ name, startDate, endDate, issues, issueName }) {
     // console.log()
     const [showIssues, setShowIssues] = useState(false);
-
+function Hide({}){
+    
+}
     return (
         <>
             <div className='sprints'>
@@ -24,6 +27,7 @@ function Sprint({ name, startDate, endDate, issues, issueName }) {
                         {issues.map((issue, index) => (
                             <div className="sprint-task" key={index}>
                                 <div className='sprint-task-left'>
+                                    <View />
                                     <p>{issueName}</p><p>{issue} </p><IconPencil />
                                 </div>
                                 <div className='sprint-task-right'>
@@ -35,7 +39,8 @@ function Sprint({ name, startDate, endDate, issues, issueName }) {
                             </div>
                         ))}
                         <div className='issue-div'>
-                            <IconPlus /> <p>Create issue</p>
+                            <IconPlus /> <p className="hideMe" onClick={Hide}>Create Issue</p>
+
                         </div>
                     </div>
                 )}
@@ -108,7 +113,6 @@ function Backlog() {
 
 
     console.log(sprintsData);
-
 
     return (
         <>
