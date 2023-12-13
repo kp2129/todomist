@@ -11,6 +11,8 @@ import NotFound from './components/pages/NotFound';
 import View from './components/View';
 import { useNavigate } from 'react-router-dom';
 import Search from './components/pages/Search';
+import Reminder from './components/pages/reminder';
+
 
 
 export default function App() {
@@ -28,23 +30,14 @@ export default function App() {
     setSelectedPage(pageName);
   }
 
-//   useEffect(() => {
-//     axios.post('').then((res) => {
-//         if(res.data.code === 0){
-//             navigate('/login');
-//         }else{
 
-//         }
-//     });
-
-    
-// }, []);
 
   return (
     <>
       <View />
       <Navbar switchPage={switchPage} />
       <Create />
+      <Reminder/>
       <main className={selectedPage === 'login' ? 'Flex-center' : ''}>
         {selectedPage !== 'login' && <Aside switchPage={switchPage} />}
         {selectedPage in pages ? (
