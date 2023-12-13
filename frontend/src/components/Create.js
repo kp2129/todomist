@@ -24,7 +24,9 @@ const Create = (props) => {
     }
 
 return (
+
     <dialog open={props.open}>
+
     <div>
       <h1 className='title'>Create Issue</h1>
 
