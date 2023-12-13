@@ -7,11 +7,13 @@ import Backlog from './components/pages/backlog';
 import Calendar from './components/pages/Calendar';
 import NotFound from './components/pages/NotFound';
 import View from './components/View';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function App() {
   const [selectedPage, setSelectedPage] = useState('backlog');
-
+  const navigate = useNavigate();
+  
   const pages = {
     calendar: <Calendar />,
     backlog: <Backlog />,
