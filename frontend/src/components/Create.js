@@ -1,57 +1,63 @@
 import React, { useState } from 'react';
+import '../style/Create.css'
 
 
-const Create = () => {
-    // State to manage tasks
+const Create = (props) => {
     const [tasks, setTasks] = useState([]);
     
-    // State for form input values
     const [taskName, setTaskName] = useState('');
     const [taskDescription, setTaskDescription] = useState('');
-  
-    // Function to handle task submission
+    const [taskDueDate, setTaskDueDate] = useState('');
+
     const addTask = () => {
       if (taskName.trim() !== '') {
-        // Create a new task object
         const newTask = {
-          id: tasks.length + 1,
           name: taskName,
           description: taskDescription,
         };
   
-        // Update tasks state with the new task
         setTasks([...tasks, newTask]);
   
-        // Clear form input values
         setTaskName('');
         setTaskDescription('');
       }
     }
 
 return (
-    <dialog open>
+    <dialog open={props.open}>
     <div>
-      <h1>Create Sprint</h1>
+      <h1 className='title'>Create Issue</h1>
 
       <div>
-        <label htmlFor="taskName">Sprint Name:</label>
+        <label htmlFor="taskName">Issue Name:</label>
         <input
           type="text"
           id="taskName"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
+          placeholder='Input text here...'
         />
       </div>
       <div>
-        <label htmlFor="taskDescription">Task Description:</label>
+        <label htmlFor="taskDescription">Issue Description:</label>
         <input
           type="text"
           id="taskDescription"
           value={taskDescription}
           onChange={(e) => setTaskDescription(e.target.value)}
+          placeholder='Input text here...'
         />
       </div>
-      <button onClick={addTask}>Add Task</button>
+      <div>
+        <label htmlFor="taskDueDate">Issue Due Date:</label>
+        <input
+          type="date"
+          id="taskDueDate"
+          value={taskDueDate}
+          onChange={(e) => setTaskDueDate(e.target.value)}
+        />
+      </div>
+      <button className='taskCreate' onClick={addTask}>Add Issue</button>
     </div>
     </dialog>
   );

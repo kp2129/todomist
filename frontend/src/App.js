@@ -27,17 +27,17 @@ export default function App() {
     setSelectedPage(pageName);
   }
 
-  useEffect(() => {
-    axios.post('').then((res) => {
-        if(res.data.code === 0){
-            navigate('/login');
-        }else{
+  // useEffect(() => {
+  //   axios.post('').then((res) => {
+  //       if(res.data.code === 0){
+  //           navigate('/login');
+  //       }else{
 
-        }
-    });
+  //       }
+  //   });
 
     
-}, []);
+// }, []);
 
   return (
     <>

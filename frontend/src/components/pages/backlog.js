@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../style/index.css';
 import View from '../View.js';
+import Create from '../Create.js';
 import { IconPlus, IconChevronDown, IconChevronRight, IconDots, IconPencil } from '@tabler/icons-react';
 import axios from 'axios';
 
@@ -53,6 +54,7 @@ function Hide({}){
 function Backlog() {
     const [showBacklog, setShowBacklog] = useState(false);
     const [sprintsData, setSprintsData] = useState([]);
+    const [createIssue, setCreateIssue] = useState(false);
 
     // let sprintsData = [0, 1];
     // let sprintsData = [];
@@ -112,7 +114,6 @@ function Backlog() {
 
 
 
-    // console.log(sprintsData);
 
     return (
         <>
@@ -135,8 +136,9 @@ function Backlog() {
                             <div className='backlog-cards'>
                                 Your backlog is empty
                             </div>
-                            <div className='issue-div'>
+                            <div className='issue-div' onClick={() => setCreateIssue(true)}>
                                 <IconPlus /> <p>Create issue</p>
+                                <Create open={createIssue} close={() => setCreateIssue(false)}/>
                             </div>
                         </>
                     )}
