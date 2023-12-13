@@ -1,32 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 export default function View() {
-
-
-
     const [todoData, setTodoData] = useState([]);
-    // const navigate = useNavigate();
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/get').then((res) => {
             if(res.data.code === 0){
                 alert("Error: "+ res.data.reason);
             }else{
-                // console.log(res.data.reason);
                 console.log(res.data);
                 setTodoData(res.data);
             }
-
-
-
             
         });
     }, []);
     return (
         <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-                {/* <p>{todoData.id}</p> */}
+            <div className="grid grid-cols-1">
+                <p>{todoData.taskName}</p>
             </div>
         </>
     )

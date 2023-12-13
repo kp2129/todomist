@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../style/index.css';
+import View from '../View.js';
 import { IconPlus, IconChevronDown, IconChevronRight, IconDots, IconPencil } from '@tabler/icons-react';
 
 function Sprint({ name, startDate, endDate, issues, issueName }) {
@@ -24,6 +25,7 @@ function Hide({}){
                         {issues.map((issue, index) => (
                             <div className="sprint-task" key={index}>
                                 <div className='sprint-task-left'>
+                                    <View />
                                     <p>{issueName}</p><p>{issue} </p><IconPencil />
                                 </div>
                                 <div className='sprint-task-right'>
@@ -50,7 +52,7 @@ function Backlog() {
     const [showBacklog, setShowBacklog] = useState(false);
 
     const sprintsData = [
-        { name: "TMST Sprint 1", startDate: "13 Nov", endDate: "11 Dec", issueName: 'TMST-1', issues: ['Nomirsti'] },
+        { name: [], startDate: [], endDate: [], issueName: [], issues: [[]] },
     ];
 
     return (
