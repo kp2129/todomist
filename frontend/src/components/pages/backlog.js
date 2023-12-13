@@ -7,9 +7,9 @@ import axios from 'axios';
 function Sprint({ name, startDate, endDate, issues, issueName }) {
     // console.log()
     const [showIssues, setShowIssues] = useState(false);
-function Hide({}){
-    
-}
+    function Hide({}){
+        
+    }
     return (
         <>
             <div className='sprints'>

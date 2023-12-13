@@ -10,6 +10,7 @@ import Calendar from './components/pages/Calendar';
 import NotFound from './components/pages/NotFound';
 import View from './components/View';
 import { useNavigate } from 'react-router-dom';
+import Search from './components/pages/Search';
 
 
 export default function App() {
@@ -20,23 +21,24 @@ export default function App() {
     calendar: <Calendar />,
     backlog: <Backlog />,
     login: <Login />,
+    search: <Search />,
   };
 
   function switchPage(pageName) {
     setSelectedPage(pageName);
   }
 
-  useEffect(() => {
-    axios.post('').then((res) => {
-        if(res.data.code === 0){
-            navigate('/login');
-        }else{
+//   useEffect(() => {
+//     axios.post('').then((res) => {
+//         if(res.data.code === 0){
+//             navigate('/login');
+//         }else{
 
-        }
-    });
+//         }
+//     });
 
     
-}, []);
+// }, []);
 
   return (
     <>

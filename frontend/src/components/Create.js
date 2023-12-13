@@ -29,7 +29,7 @@ const Create = () => {
     }
 
 return (
-    <dialog open>
+    <dialog >
     <div>
       <h1>Create Sprint</h1>
 
