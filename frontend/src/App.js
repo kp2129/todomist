@@ -30,22 +30,31 @@ export default function App() {
     setSelectedPage(pageName);
   }
 
+  useEffect(() => {
+    axios.post('').then((res) => {
+        if(res.data.code === 0){
+            navigate('/login');
+        }else{
 
+        }
+    });
+
+    
+}, []);
 
   return (
     <>
-      <View />
-      <Navbar switchPage={switchPage} />
-      <Create />
-      <Reminder/>
-      <main className={selectedPage === 'login' ? 'Flex-center' : ''}>
-        {selectedPage !== 'login' && <Aside switchPage={switchPage} />}
-        {selectedPage in pages ? (
-          pages[selectedPage]
-        ) : (
-          <NotFound />
-        )}
-      </main>
+        <View />
+        <Navbar switchPage={switchPage} />
+        <Create />
+        <main className={selectedPage === 'login' ? 'Flex-center' : ''}>
+          {selectedPage !== 'login' && <Aside switchPage={switchPage} />}
+          {selectedPage in pages ? (
+            pages[selectedPage]
+          ) : (
+            <NotFound />
+          )}
+        </main>
     </>
   );
 }
