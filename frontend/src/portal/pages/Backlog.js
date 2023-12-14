@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../../style/index.css';
-import View from '../View.js';
-import Create from '../Create.js';
+import View from '../components/View.js';
+import Create from '../components/Create.js';
 import { IconPlus, IconChevronDown, IconChevronRight, IconDots, IconPencil } from '@tabler/icons-react';
 import axios from 'axios';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/Create.css'
+import '../../../src/style/Create.css';
 
 
 const Create = (props) => {

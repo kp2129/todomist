@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../style/index.css';
 import { IconChevronDown, IconChevronRight, IconTimeline, IconColumns3, IconStack3, IconCalendar, IconSearch } from '@tabler/icons-react';
 
 function Aside(props) {

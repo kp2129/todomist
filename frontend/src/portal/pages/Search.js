@@ -1,8 +1,8 @@
 import { IconSearch } from '@tabler/icons-react';
 import React, { useState } from 'react';
-import '../../style/Search.css';
+import '../../../src/style/Create.css';
 import axios from 'axios';
-import Sprint from '../SearchSprint';
+import Sprint from '../components/SearchSprint';
 
 export default function Search() {
     const [query, setQuery] = useState('');
