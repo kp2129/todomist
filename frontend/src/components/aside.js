@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../style/index.css';
-import { IconChevronDown, IconChevronRight, IconTimeline, IconColumns3, IconStack3, IconCalendar } from '@tabler/icons-react';
+import { IconChevronDown, IconChevronRight, IconTimeline, IconColumns3, IconStack3, IconCalendar, IconSearch } from '@tabler/icons-react';
 
 function Aside(props) {
   const [sections, setSections] = useState({ timeline: false, example: false });
@@ -30,6 +30,7 @@ function Aside(props) {
                 <p onClick={() => props.switchPage('backlog')}><IconStack3/> Backlog</p>
                 <p onClick={() => props.switchPage('board')}><IconColumns3 /> Board</p>
                 <p onClick={() => props.switchPage('calendar')}><IconCalendar /> Calendar</p>
+                <p onClick={() => props.switchPage('search')}><IconSearch /> Search</p>
               </div>
             
           </div>

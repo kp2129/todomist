@@ -10,6 +10,9 @@ import Calendar from './components/pages/Calendar';
 import NotFound from './components/pages/NotFound';
 import View from './components/View';
 import { useNavigate } from 'react-router-dom';
+import Search from './components/pages/Search';
+import Reminder from './components/pages/reminder';
+
 
 
 export default function App() {
@@ -20,6 +23,7 @@ export default function App() {
     calendar: <Calendar />,
     backlog: <Backlog />,
     login: <Login />,
+    search: <Search />,
   };
 
   function switchPage(pageName) {

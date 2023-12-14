@@ -45,29 +45,30 @@ const Create = (props) => {
     }
 
 return (
+
     <dialog open={props.open}>
+    <div>
+      <h1 className='title'>Create Issue</h1>
       <div>
-        <h1 className='title'>Create Issue</h1>
-          <div>
-            <label htmlFor="taskName">Issue Name:</label>
-            <input
-              type="text"
-              id="taskName"
-              value={taskName}
-              onChange={(e) => setTaskName(e.target.value)}
-              placeholder='Input text here...'
-            />
-          </div>
-          <div>
-            <label htmlFor="taskDescription">Issue Description:</label>
-            <input
-              type="text"
-              id="taskDescription"
-              value={taskDescription}
-              onChange={(e) => setTaskDescription(e.target.value)}
-              placeholder='Input text here...'
-            />
-          </div>
+        <label htmlFor="taskName">Issue Name:</label>
+        <input
+          type="text"
+          id="taskName"
+          value={taskName}
+          onChange={(e) => setTaskName(e.target.value)}
+          placeholder='Input text here...'
+        />
+      </div>
+      <div>
+        <label htmlFor="taskDescription">Issue Description:</label>
+        <input
+          type="text"
+          id="taskDescription"
+          value={taskDescription}
+          onChange={(e) => setTaskDescription(e.target.value)}
+          placeholder='Input text here...'
+        />
+      </div>
           <div>
             <label htmlFor="taskDueDate">Issue Due Date:</label>
             <input

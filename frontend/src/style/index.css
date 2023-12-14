@@ -136,6 +136,8 @@ aside {
     
 }
 
+
+
 .inner-data > p {
     &:hover{
         color: #62a9c7;
